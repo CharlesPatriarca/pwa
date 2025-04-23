@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0D6EFD">
+  <title>Agendamento Mecânico</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icons/icon-192x192.png" type="image/png">
+</head>
+<body>
+  <header>
+    <h1>Oficina Rápida</h1>
+    <p>Agende sua visita com praticidade!</p>
+  </header>
+
+  <main>
+    <section class="formulario">
+      <h2>Agendar Atendimento</h2>
+      <form id="agendamentoForm">
+        <input type="text" id="nome" placeholder="Seu Nome" required>
+        <input type="tel" id="telefone" placeholder="Telefone para Contato" required>
+        <input type="date" id="data" required>
+        <input type="time" id="hora" required>
+        <button type="submit">Agendar</button>
+      </form>
+      <div id="mensagemSucesso" class="hidden">Agendamento realizado com sucesso!</div>
+    </section>
+
+    <section class="contato">
+      <h2>Contato</h2>
+      <a href="mailto:oficina@exemplo.com">Enviar Email</a><br>
+      <a href="tel:+550011223344">Ligar para Oficina</a><br>
+      <a href="sms:+550011223344">Enviar SMS</a>
+    </section>
+
+    <section class="mapa">
+      <h2>Localização</h2>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d493.8658990010499!2d-34.88145528634689!3d-8.006445489003132!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ab19b07be98feb%3A0xabcaf64c5e616cb2!2sGaragemcar!5e0!3m2!1spt-BR!2sbr!4v1745419961967!5m2!1spt-BR!2sbr" 
+      width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" frameborder="0" allowfullscreen></iframe>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Oficina Rápida - Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
