@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0D6EFD">
   <title>Agendamento Mecânico</title>
-  <link rel="stylesheet" href="style.css">
   <link rel="manifest" href="manifest.json">
   <link rel="icon" href="icons/icon-192x192.png" type="image/png">
   <link rel="preload" href="style.css" as="style">
+  <link rel="stylesheet" href="style.css">
   <link rel="preload" href="script.js" as="script">
 </head>
 <body>
@@ -21,10 +21,18 @@
     <section class="formulario">
       <h2>Agendar Atendimento</h2>
       <form id="agendamentoForm">
+        <label for="nome">Nome</label>
         <input type="text" id="nome" placeholder="Seu Nome" required>
-        <input type="tel" id="telefone" placeholder="Telefone para Contato" required>
+
+        <label for="telefone">Telefone</label>
+        <input type="tel" id="telefone" placeholder="Telefone para Contato" required pattern="\\d{10,11}" title="Informe um telefone válido">
+
+        <label for="data">Data</label>
         <input type="date" id="data" required>
+
+        <label for="hora">Hora</label>
         <input type="time" id="hora" required>
+
         <button type="submit">Agendar</button>
       </form>
       <div id="mensagemSucesso" class="hidden">Agendamento realizado com sucesso!</div>
@@ -32,14 +40,14 @@
 
     <section class="contato">
       <h2>Contato</h2>
-      <a href="mailto:oficina@exemplo.com">Enviar Email</a><br>
-      <a href="tel:+550011223344">Ligar para Oficina</a><br>
-      <a href="sms:+550011223344">Enviar SMS</a>
+      <a href="mailto:oficina@exemplo.com" style="display:inline-block; margin:8px 0;">Enviar Email</a><br>
+      <a href="tel:+550011223344" style="display:inline-block; margin:8px 0;">Ligar para Oficina</a><br>
+      <a href="sms:+550011223344" style="display:inline-block; margin:8px 0;">Enviar SMS</a>
     </section>
 
     <section class="mapa">
       <h2>Localização</h2>
-      <iframe loading="lazy" src="https://encurtador.com.br/0NI84" frameborder="0" allowfullscreen></iframe>
+      <iframe title="Localização da Oficina" loading="lazy" src="https://maps.google.com/?q=Oficina+Mecanica" frameborder="0" allowfullscreen width="100%" height="300"></iframe>
     </section>
   </main>
 
@@ -48,5 +56,12 @@
   </footer>
 
   <script src="script.js" defer></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js')
+        .then(reg => console.log('Service Worker registrado', reg))
+        .catch(err => console.error('Service Worker erro', err));
+    }
+  </script>
 </body>
 </html>
